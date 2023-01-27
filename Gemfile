@@ -13,6 +13,7 @@ gem "stimulus-rails"
 gem "cssbundling-rails"
 gem "jbuilder"
 gem "redis", "~> 4.0"
+gem "devise", "~> 4.8"
 
 
 
