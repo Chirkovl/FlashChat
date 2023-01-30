@@ -3,5 +3,5 @@ class Message < ApplicationRecord
   belongs_to :chat
 
   scope :sorted, -> { order(:id) }
-  validates:body, presence: true
+  validates :body, presence: true
 end

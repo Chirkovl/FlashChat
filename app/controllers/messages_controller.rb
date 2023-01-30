@@ -4,8 +4,8 @@ class MessagesController < ApplicationController
     @user = current_user
 
     if @new_message.save
-      @new_message.broadcast_append_to @new_message.chat, notice: "New question created!"
-      flash.now[:notice] = "You have new message ' #{@new_message.body} ' from User: #{@user.email}"
+      @new_message.broadcast_append_to(@new_message.chat)
+      flash.now[:notice] = "You have a new message ' #{@new_message.body} ' from user: #{@user.email}"
       Sounder::Sound.new("#{Rails.root}/app/assets/audios/notification.mp3").play
     end
   end

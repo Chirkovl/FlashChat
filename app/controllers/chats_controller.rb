@@ -13,13 +13,13 @@ class ChatsController < ApplicationController
   def create
     @new_chat = Chat.new(chat_params)
     if @new_chat.save
-      @new_chat.broadcast_append_to :chats
+      @new_chat.broadcast_append_to(:chats)
     end
   end
 
+  private
 
   def chat_params
     params.require(:chat).permit(:title)
   end
-  
 end
